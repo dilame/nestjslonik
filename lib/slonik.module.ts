@@ -1,6 +1,6 @@
 import { DynamicModule, Module } from '@nestjs/common';
-import { SlonikCoreModule } from './slonik-core.module';
-import { SlonikModuleAsyncOptions, SlonikModuleOptions } from './interfaces';
+import { SlonikCoreModule } from './slonik-core.module.js';
+import { SlonikModuleAsyncOptions, SlonikModuleOptions } from './interfaces/index.js';
 
 @Module({})
 export class SlonikModule {

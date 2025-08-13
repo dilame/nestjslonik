@@ -1,14 +1,16 @@
-<a name="nestjs-slonik"></a>
+<a name="nestjslonik"></a>
 ## Description
 
-[Slonik](https://github.com/gajus/slonik) module for [Nest 8/9/10](https://github.com/nestjs/nest)
+> A fork of https://github.com/mkorobkov/nestjs-slonik compiled for ESM
+
+[Slonik](https://github.com/gajus/slonik) module for [Nest 8/9/10/11](https://github.com/nestjs/nest)
 
 This module is based on [@nestjs/typeorm](https://github.com/nestjs/typeorm) and [@nestjs/sequelize](https://github.com/nestjs/sequelize) modules.
 
 This README is based on nest.js [documentation](https://github.com/nestjs/docs.nestjs.com/blob/ed5ebf0a4c19edfa74b48ff108ed48088c7f6a2c/content/techniques/sql.md).
 
 ## Contents
-* [nestjs-slonik](#nestjs-slonik)
+* [nestjslonik](#nestjslonik)
     * [Installation](#installation)
     * [Basic import](#basic-import)
     * [Multiple databases](#multiple-databases)
@@ -23,13 +25,13 @@ This README is based on nest.js [documentation](https://github.com/nestjs/docs.n
 ###### npm
 
 ```bash
-npm i --save nestjs-slonik slonik
+npm i --save nestjslonik slonik
 ```
 
 ###### yarn
 
 ```bash
-yarn add nestjs-slonik slonik
+yarn add nestjslonik slonik
 ```
 
 <a name="basic-import"></a>
@@ -41,7 +43,7 @@ Once the installation process is complete, we can import the `SlonikModule` into
 > app.module.ts
 ```typescript
 import { Module } from '@nestjs/common';
-import { SlonikModule } from 'nestjs-slonik';
+import { SlonikModule } from 'nestjslonik';
 
 @Module({
   imports: [
@@ -100,7 +102,7 @@ import any modules), for example:
 > app.service.ts
 ```typescript
 import { Injectable } from '@nestjs/common';
-import { InjectPool } from 'nestjs-slonik';
+import { InjectPool } from 'nestjslonik';
 import { DatabasePool, sql } from 'slonik';
 
 @Injectable()
@@ -155,7 +157,7 @@ It's also possible to inject any Slonik pool instance to the providers:
 
 ```typescript
 import { DatabasePool } from 'slonik';
-import { getPoolToken } from 'nestjs-slonik';
+import { getPoolToken } from 'nestjslonik';
 
 @Module({
   providers: [
@@ -180,7 +182,7 @@ depend on Slonik pool instance. How do we handle that? The solution is to create
 that, we set up [custom providers](https://docs.nestjs.com/fundamentals/custom-providers).
 Each registered pool is automatically represented by an `<poolName='default'>SlonikPool` token.
 
-The `nestjs-slonik` package exposes the `getPoolToken()` function which returns a prepared token based on a given
+The `nestjslonik` package exposes the `getPoolToken()` function which returns a prepared token based on a given
 pool name.
 
 ```typescript
@@ -330,7 +332,7 @@ We register `master` pool as the default pool, but use Slonik interceptors to re
 > app.controller.ts
 ```typescript
 import { Controller, Get } from '@nestjs/common';
-import { InjectPool } from 'nestjs-slonik';
+import { InjectPool } from 'nestjslonik';
 import { DatabasePool, sql } from 'slonik';
 
 @Controller()

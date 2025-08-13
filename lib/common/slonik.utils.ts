@@ -2,8 +2,8 @@ import { Logger } from '@nestjs/common';
 import { v4 as uuid } from 'uuid';
 import { Observable } from 'rxjs';
 import { delay, retryWhen, scan } from 'rxjs/operators';
-import { DEFAULT_POOL_NAME } from '../slonik.constants';
-import { SlonikModuleOptions } from '../interfaces';
+import { DEFAULT_POOL_NAME } from '../slonik.constants.js';
+import { SlonikModuleOptions } from '../interfaces/index.js';
 
 const logger = new Logger('SlonikModule');
 

@@ -1,1 +1,1 @@
-export * from './slonik-options.interface';
+export * from './slonik-options.interface.js';

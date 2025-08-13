@@ -1,15 +1,29 @@
 {
-  "name": "nestjs-slonik",
-  "version": "10.0.0",
-  "description": "Slonik module for NestJS",
+  "name": "nestjslonik",
+  "version": "11.0.0",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "/dist",
+    "/lib"
+  ],
+  "description": "Slonik ESM for NestJS",
   "keywords": [
     "nest",
     "nestjs",
-    "slonik"
+    "slonik",
+    "esm"
   ],
-  "author": "Mikhail Korobkov",
+  "author": "Dilame Bowzee",
   "license": "MIT",
-  "url": "https://github.com/mkorobkov/nestjs-slonik#readme",
+  "url": "https://github.com/dilame/nestjslonik#readme",
   "scripts": {
     "build": "rm -rf dist && tsc -p tsconfig.build.json",
     "format": "prettier --write \"**/*.ts\"",
@@ -37,40 +51,35 @@
     "eslint": "8.9.0",
     "eslint-config-prettier": "8.4.0",
     "eslint-plugin-import": "2.25.4",
-    "jest": "27.5.1",
+    "jest": "30.0.5",
     "lint-staged": "12.3.4",
     "pg": "8.7.3",
     "prettier": "2.5.1",
     "reflect-metadata": "0.1.13",
     "release-it": "14.12.4",
-    "rxjs": "7.5.4",
-    "slonik": "27.1.0",
+    "rxjs": "^7.8.2",
+    "slonik": "48.4.1",
     "supertest": "6.2.2",
-    "ts-jest": "27.1.3",
-    "typescript": "4.5.5"
+    "ts-jest": "29.4.1",
+    "typescript": "^5.9.2"
   },
   "dependencies": {
     "uuid": "8.3.2"
   },
   "peerDependencies": {
-    "@nestjs/common": "^8.0.0 || ^9.0.0 || ^10.0.0",
-    "@nestjs/core": "^8.0.0 || ^9.0.0 || ^10.0.0",
+    "@nestjs/common": "^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0",
+    "@nestjs/core": "^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0",
-    "slonik": ">=27.0.0"
+    "slonik": ">=48.4.1"
   },
   "lint-staged": {
     "*.ts": [
       "prettier --write"
     ]
   },
-  "files": [
-    "/dist",
-    "index.js",
-    "index.d.ts"
-  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/mkorobkov/nestjs-slonik"
+    "url": "https://github.com/dilame/nestjslonik"
   }
 }

@@ -1,2 +1,2 @@
-export * from './slonik.decorators';
-export * from './slonik.utils';
+export * from './slonik.decorators.js';
+export * from './slonik.utils.js';

@@ -16,13 +16,13 @@ import {
   getPoolName,
   getPoolToken,
   handleRetry,
-} from './common';
+} from './common/index.js';
 import {
   SlonikModuleAsyncOptions,
   SlonikModuleOptions,
   SlonikOptionsFactory,
-} from './interfaces';
-import { SLONIK_MODULE_ID, SLONIK_MODULE_OPTIONS } from './slonik.constants';
+} from './interfaces/index.js';
+import { SLONIK_MODULE_ID, SLONIK_MODULE_OPTIONS } from './slonik.constants.js';
 
 @Global()
 @Module({})
